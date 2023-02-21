@@ -77,7 +77,7 @@
 			container.scrollLeft = (content[0].offsetWidth / 2) - (containerWidth / 2);
 
 			container.addEventListener('scroll', function() {
-				if (container.scrollLeft + containerWidth >= contentWidth) {
+				if (container.scrollLeft + containerWidth >= contentWidth-1) {
 					// move the first content element to the end of the container
 					let firstContent = container.firstElementChild;
 					container.appendChild(firstContent);
@@ -86,7 +86,7 @@
 					// move the last content element to the beginning of the container
 					let lastContent = container.lastElementChild;
 					container.prepend(lastContent);
-					container.scrollLeft += lastContent.offsetWidth;
+					container.scrollLeft = lastContent.offsetWidth;
 				}
 			});
 		}
